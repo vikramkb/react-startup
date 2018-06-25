@@ -1,30 +1,15 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { Route, Redirect, withRouter, Switch } from 'react-router-dom'
-import Async from 'react-code-splitting'
+'use strict'
 
-import Login from './Auth/Login'
-import Signup from './Auth/Signup'
-import Header from './Header'
-import { Body } from './Styled'
+import React, { Component } from 'react'
+import { render } from 'react-dom'
 
-const Home = () => <Async load={import('./Home')} />
+export default class App extends Component {
+  constructor(props) {
+    console.log('testing')
+    super(props)
+  }
 
-const App = ({ user }) => (
-  <Body>
-    <Header />
-    <Switch>
-      {user.token && <Route path="/" component={Home} />}
-      <Route path="/signup" component={Signup} />
-      <Route path="/login" component={Login} />
-      <Redirect to="/login" />
-    </Switch>
-  </Body>
-)
-
-App.propTypes = {
-  user: PropTypes.shape({}).isRequired,
+  render() {
+    return <h1>Hello World!</h1>
+  }
 }
-
-export default withRouter(connect(state => ({ user: state.user }))(App))
