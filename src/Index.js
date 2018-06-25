@@ -15,6 +15,7 @@ import { Router, Route } from 'react-router'
 import History from './History'
 
 import App from './components/App'
+import './styles/app.scss'
 const store = createStore(yelpApp, applyMiddleware(thunkMiddleware))
 
 ReactDOM.render(

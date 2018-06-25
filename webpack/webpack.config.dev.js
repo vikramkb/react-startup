@@ -29,6 +29,10 @@ module.exports = {
         include: [resolve(__dirname, '../src'), resolve(__dirname)],
         use: 'babel-loader',
       },
+      {
+        test: /\.(s*)css$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
     ],
   },
   plugins: [
