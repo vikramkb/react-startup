@@ -6,7 +6,7 @@ module.exports = {
   entry: [
     'webpack-dev-server/client',
     'webpack/hot/only-dev-server',
-    resolve(__dirname, 'hotReload'),
+    resolve(__dirname, '../src/Index'),
   ],
   output: {
     filename: 'bundle.js',
